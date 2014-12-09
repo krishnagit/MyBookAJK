@@ -1,0 +1,53 @@
+<html ng-app='myBook'>
+	<head>
+		<title></title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+		<link rel='stylesheet' href='../css/style.css'>
+		<script type="text/javascript" src="../js/Lib/angular.js"></script>
+		<script type="text/javascript" src="../js/Lib/angular-route.js"></script>
+		<script type="text/javascript" src="../js/controller/LoginController.js"></script>
+		<script type="text/javascript" src="../js/controller/FeedController.js"></script>
+		<script type="text/javascript" src="../js/AngularApp.js"></script>
+
+	</head>
+
+	<body ng-controller="LoginController">
+		<div id="header">
+
+			<div id="header_title">
+				<h1>MY BOOK</h1>
+			</div>
+
+			<div id="header_login" ng-hide="loginState">
+
+				<form name="form_login" class="loginForm" method="post">
+
+					<input type="text" name="username" id="username" value="" maxlength="8" 
+						placeholder="Username" ng-model="username" required autofocus>
+
+					<input type="password" name="password" id="password" value=""
+						placeholder="Password" ng-model="password" required>
+
+					<input type="submit" name="submit" value="Sign in" ng-click="validateUser()" >
+				</form>
+			</div>
+			<div id="signout" ng-show="loginState">
+				<a href="#/" ng-click="logOut()">Sign out</a>
+			</div>
+		</div>
+
+		<div class="section" ng-show="loginState">
+			<nav float="left" margin-top="25px">
+				<a href="#/feeds">Feeds</a> <br />
+				<a href="#/profile">Profile</a> <br />
+			</nav>
+		</div>
+
+		<div class="content" ng-view> </div>
+		
+		<div id="footer">Copyright © Mybook, 2014</div>
+
+	</body>
+
+</html>

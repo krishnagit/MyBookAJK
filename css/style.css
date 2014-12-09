@@ -1,0 +1,94 @@
+#header {
+    background-color:#FF5E90;
+    color:black;
+    text-align:right;
+    padding: 10px;
+    height:80px;
+}
+#header_title {
+	text-align: left;
+	display: inline;
+	width:40%;
+	float:left;
+}
+#header_login {
+	display:inline;
+	width:50%;
+	padding-top: 100px;
+	margin-top: 100px;
+}
+#nav {
+    line-height:30px;
+    background-color:#366097;
+    height:550px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+#section {
+    text-align:center;
+}
+#footer {
+    background-color:#366097;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:15px;
+	margin-top:-5px;
+}
+#image_centerer {
+	text-align: center;
+}
+#image1 {
+    line-height:30px;
+    height:152px;
+    width:299px;
+    float:right;
+    padding:5px;
+}
+#image2 {
+    line-height:30px;
+    height:75px;
+    float:left;
+    padding:5px;
+}
+#img1 {
+    float:left;
+}
+#txt {
+    font-family:"Times New Roman", Times, serif;
+    font-size: 30px;
+}
+.tftextinput {
+    margin: 0;
+    padding: 5px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
+    border:1px solid #000099;
+    border-right:0px;
+    border-top-left-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+}
+.tfbutton {
+    margin: 0;
+    padding: 3px 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    border: solid 1px #000099;
+    border-right:0px;
+    background: #0095cd;
+    border-top-right-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+}
+.tfbutton:hover {
+    text-decoration: none;
+    background: #007ead;
+}
+.tfclear {
+    clear:both;
+}

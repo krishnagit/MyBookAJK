@@ -1,4 +1,4 @@
-<div id="section" ng-controller="FeedsController">
+<div id="section" ng-controller="FeedController">
     <br><br>
     <input id="feedText" size="30" class="tftextinput" value="" type="text" ng-model="feedText"/>&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="button" id="post" value="Post Feed" ng-click="addFeed()" class="tfbutton">
@@ -6,4 +6,14 @@
     <div id="myDynamicTable">
 		<div id="dynamicTable"> </div>
 	</div>
+	<div>
+	<table>
+    <tr ng-repeat="item in feedsList" >
+        <td><b></b> {{item.feedText}} 			</td>
+    <td>
+    <button ng-click="deleteFeed(item.id)">X</button>
+                    </td>
+    </tr>
+    </table>
+    </div>
 </div>

@@ -1,3 +1,10 @@
-<div>
-	<p> Profiles go here </p>
+<div class = "profile">
+<div class="profiledetail">
+<input id="name" type="text" name="name" maxlength="50" placeholder="Name" size="30" required  ng-change="validateInput(this);"/>*<br><br>
+<input id="age" type="text" name="age" onkeyup="this.value = minmax(this.value, 0, 100)" maxlength="3"  ng-change="validateInput(this);" placeholder="Age" size="30" required/>*<br><br>
+<input id="phone" type="text" name="phone" placeholder="Phone"  ng-change="validateInput(this);" onkeypress='return event.charCode >= 48 && event.charCode <= 57' size="30" required/>*<br><br>
+<input id="email" type="text" name="email" placeholder="Email"  ng-change="validateInput(this);" size="30" required/>*<br><br>
+<textarea placeholder="Address" rows="3" cols="32"> </textarea><br><br>
+<input id="profilePath" type="file" name="datafile" size="40" placeholder="Profile Image" ng-change="onFileSelected(event)"><br><br>
+<button id="save" ng-click="saveProfile();" disabled="true">save</button>
 </div>

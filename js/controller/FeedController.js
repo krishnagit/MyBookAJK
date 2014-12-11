@@ -1,5 +1,5 @@
 
-var feedsModule = angular.module('feedsModule', []);
+var feedsModule = angular.module('feedModule', []);
 
 feedsModule.service("FeedsService", function() {
 	
@@ -23,11 +23,7 @@ feedsModule.service("FeedsService", function() {
 			}
 	};
 	
-	/**
-	 * Text Feed model
-	 * @param {Number} id 
-	 * @param {String} text
-	 */
+	/*
 	function TextFeed(id, text) {
 	    this.id = id;
 		this.type = "Text";
@@ -35,17 +31,13 @@ feedsModule.service("FeedsService", function() {
 	    this.time = new Date();
 	}
 
-	// prototype
+	
 	TextFeed.prototype = Object.create(Feed.prototype);
 	TextFeed.prototype.getFeed = function() {
 	    return this.text;
 	}
 
-	/**
-	 * URL Feed model
-	 * @param {Number} id 
-	 * @param {String} url
-	 */
+	
 	function URLFeed(id, url) {
 		this.id = id;
 		this.type = "URL";
@@ -53,9 +45,7 @@ feedsModule.service("FeedsService", function() {
 	    this.time = new Date();
 	}
 
-	/**
-	 * Singleton Feed Counter (Used for FeedId)
-	 */
+
 	var getFeedCounter = function() {
 		var count = 0;
 		return function () {
@@ -63,7 +53,7 @@ feedsModule.service("FeedsService", function() {
 		};
 	}();
 	
-	// prototype
+	
 	URLFeed.prototype = Object.create(Feed.prototype);
 	URLFeed.prototype.getFeed = function() {
 	    return this.url;
@@ -97,18 +87,54 @@ feedsModule.service("FeedsService", function() {
 		console.log('To be implemented!!!! YET!!!');
 	};
 	
-	this.list = function() { return allFeeds; };
+	this.list = function() { return allFeeds; };*/
+	// Item List Arrays
+    var items = [];    
+	
+	  // Add Item to Checked List and delete from Unchecked List
+    this.deleteFeed = function (id) {
+    	
+        for (var i = 0, length = items.length; i < length; i++) {
+        	if (id === items[i].id) {
+         		items.splice(i, 1);
+        	}
+        } 
+       
+    };
+	
+
+    // Add a Item to the list
+    this.addFeed = function (feedText) {
+
+        items.push({
+        	id :items.length,
+            feedText: feedText
+        });
+
+        // Clear input fields after push
+              
+
+    };
+
+this.list= function(){
+	return items;
+};
+
 });
 
-feedsModule.controller('FeedsController', ['$scope', 'FeedsService', function($scope, feedsService) {
+
+
+feedsModule.controller('FeedController', ['$scope', 'FeedsService', function($scope, feedsService) {
 	
 	$scope.feedsList =  feedsService.list();
 	
-	$scope.deleteFeed = function(feedID) {
-		feedsService.deleteFeed(feedID);
+	$scope.deleteFeed = function(id) {
+		feedsService.deleteFeed(id);
 	};
 	
 	$scope.addFeed = function() {
 		feedsService.addFeed($scope.feedText);
+		$scope.feedText="";
 	};
+	
 }]);

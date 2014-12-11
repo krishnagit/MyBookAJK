@@ -1,4 +1,4 @@
-var app = angular.module('myBook', ['mainModule', 'feedsModule','ngRoute']);
+var app = angular.module('myBook', ['mainModule', 'feedModule','profileModule','ngRoute']);
 
 app.config(['$routeProvider',
 	function ($routeProvider) {
